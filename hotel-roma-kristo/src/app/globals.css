@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F5F0E8;
+  --charcoal: #1A1A1A;
+  --gold: #C8A96E;
+  --warm-white: #FAFAF7;
+  --muted: #8A8578;
+}
+
+/* ==================== BASE STYLES ==================== */
+* {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto;
+  }
+}
+
+html {
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A68B4B;
+}
+
+/* ==================== SELECTION ==================== */
+::selection {
+  background-color: var(--gold);
+  color: var(--cream);
+}
+
+/* ==================== CUSTOM UTILITIES ==================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .accent-label {
+    @apply uppercase tracking-[0.3em] text-xs font-inter text-muted;
+  }
+
+  .gold-line {
+    @apply w-16 h-px bg-gold;
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-20 md:py-32;
+  }
+
+  .clip-reveal {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  .clip-reveal-active {
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+/* ==================== PAGE TRANSITION ==================== */
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  z-index: 50;
+  transform-origin: bottom;
+}
+
+/* ==================== CUSTOM CURSOR ==================== */
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10001;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+.custom-cursor-circle {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.custom-cursor-circle.hovering {
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+  border-color: var(--gold);
+}
+
+/* ==================== NAVBAR ==================== */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--gold);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(0);
+}
+
+/* ==================== MARQUEE ==================== */
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+/* ==================== FORM FLOATING LABEL ==================== */
+.floating-label-group {
+  position: relative;
+}
+
+.floating-label-group input,
+.floating-label-group textarea,
+.floating-label-group select {
+  @apply w-full bg-transparent border-b border-muted/30 py-3 px-0 text-charcoal outline-none transition-all duration-300;
+}
+
+.floating-label-group input:focus,
+.floating-label-group textarea:focus,
+.floating-label-group select:focus {
+  @apply border-gold;
+}
+
+.floating-label-group label {
+  @apply absolute left-0 top-3 text-muted transition-all duration-300 pointer-events-none;
+}
+
+.floating-label-group input:focus ~ label,
+.floating-label-group input:not(:placeholder-shown) ~ label,
+.floating-label-group textarea:focus ~ label,
+.floating-label-group textarea:not(:placeholder-shown) ~ label,
+.floating-label-group select:focus ~ label,
+.floating-label-group select:valid ~ label {
+  @apply -top-3 text-xs text-gold;
+}
+
+/* ==================== MOBILE MENU ==================== */
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-charcoal z-40;
+}
+
+/* ==================== LIGHTBOX ==================== */
+.lightbox-overlay {
+  @apply fixed inset-0 bg-black/90 z-50 flex items-center justify-center;
+}
