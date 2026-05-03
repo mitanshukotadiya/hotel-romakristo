@@ -64,15 +64,7 @@ export default function ContactForm() {
                   <p className="font-inter text-sm text-muted">07069370001</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <span className="text-gold">📧</span>
-                </div>
-                <div>
-                  <p className="font-inter text-sm text-charcoal font-medium">Email</p>
-                  <p className="font-inter text-sm text-muted">info@hotelromakristo.com</p>
-                </div>
-              </div>
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <span className="text-gold">⏰</span>

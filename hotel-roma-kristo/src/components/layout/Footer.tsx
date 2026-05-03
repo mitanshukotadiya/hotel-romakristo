@@ -94,10 +94,7 @@ export default function Footer() {
                 <span className="text-gold mt-0.5">📞</span>
                 <span>07069370001</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-gold mt-0.5">📧</span>
-                <span>info@hotelromakristo.com</span>
-              </li>
+
               <li className="flex items-start gap-3">
                 <span className="text-gold mt-0.5">⏰</span>
                 <span>Check-in: 2:00 PM / Check-out: 10:00 AM</span>
