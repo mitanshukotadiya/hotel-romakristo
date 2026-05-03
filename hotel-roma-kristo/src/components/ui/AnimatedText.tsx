@@ -55,8 +55,8 @@ export default function AnimatedText({
   const units = splitBy === "word" ? text.split(" ") : text.split("");
 
   return (
-    <div ref={containerRef} className="overflow-hidden">
-      <Tag className={className}>
+    <div ref={containerRef} className="overflow-visible">
+      <Tag className={`${className} leading-[1.3] pb-2`}>
         {units.map((unit, i) => (
           <span
             key={i}
