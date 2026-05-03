@@ -2,7 +2,6 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import VideoShowcase from "@/components/sections/VideoShowcase";
-import Testimonials from "@/components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -11,7 +10,6 @@ export default function Home() {
       <About />
       <WhyChooseUs />
       <VideoShowcase />
-      <Testimonials />
     </>
   );
 }

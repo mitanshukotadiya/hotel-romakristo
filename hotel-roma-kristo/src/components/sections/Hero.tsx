@@ -56,7 +56,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full overflow-hidden flex items-end justify-end pb-32 pr-6 md:pb-40 md:pr-16 lg:pr-24"
+      className="relative h-[100dvh] w-full overflow-hidden"
       id="hero"
     >
       {/* Background Image */}
@@ -75,12 +75,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/20" />
 
       {/* Content */}
-      <div ref={textRef} className="relative z-10 text-right max-w-lg lg:max-w-xl">
-        <p className="hero-sub accent-label text-cream/70 mb-6 flex justify-end">
+      <div ref={textRef} className="absolute bottom-24 right-6 md:bottom-32 md:right-16 lg:bottom-32 lg:right-24 z-20 text-right max-w-[85vw] sm:max-w-md md:max-w-lg lg:max-w-xl">
+        <p className="hero-sub accent-label text-cream/80 mb-4 flex justify-end">
           ✦ Premium Hospitality in Dwarka ✦
         </p>
 
-        <h1 className="font-playfair text-3xl md:text-5xl lg:text-6xl text-cream leading-[1.1] mb-6">
+        <h1 className="font-playfair text-3xl md:text-5xl lg:text-6xl text-cream leading-tight py-2 mb-4">
           {headlineWords.map((word, i) => (
             <span
               key={i}
@@ -91,12 +91,12 @@ export default function Hero() {
           ))}
         </h1>
 
-        <p className="hero-sub font-inter text-cream/70 text-base md:text-lg tracking-wide mb-8">
+        <p className="hero-sub font-inter text-cream/80 text-base md:text-lg tracking-wide mb-6">
           Hotel Roma Kristo, Dwarka
         </p>
 
-        <div className="hero-sub flex justify-end mt-2">
-          <Button href="/rooms" variant="outline" className="border-cream/50 text-cream hover:text-charcoal">
+        <div className="hero-sub flex justify-end mt-4">
+          <Button href="/rooms" variant="outline" className="border-cream/50 text-cream hover:text-charcoal bg-charcoal/20 backdrop-blur-sm">
             <span>Explore Rooms</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
