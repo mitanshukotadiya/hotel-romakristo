@@ -19,7 +19,14 @@ export default function CustomCursor() {
     let circleX = 0;
     let circleY = 0;
 
+    let isVisible = false;
+
     const handleMouseMove = (e: MouseEvent) => {
+      if (!isVisible) {
+        dot.style.opacity = "1";
+        circle.style.opacity = "1";
+        isVisible = true;
+      }
       mouseX = e.clientX;
       mouseY = e.clientY;
       dot.style.left = `${mouseX - 4}px`;
@@ -76,8 +83,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={dotRef} className="custom-cursor-dot hidden md:block" />
-      <div ref={circleRef} className="custom-cursor-circle hidden md:block" />
+      <div ref={dotRef} className="custom-cursor-dot hidden md:block opacity-0 transition-opacity duration-300" />
+      <div ref={circleRef} className="custom-cursor-circle hidden md:block opacity-0 transition-opacity duration-300" />
     </>
   );
 }

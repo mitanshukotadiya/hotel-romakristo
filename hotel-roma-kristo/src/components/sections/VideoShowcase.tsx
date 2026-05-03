@@ -28,7 +28,7 @@ export default function VideoShowcase() {
   const gridRef = useRef<HTMLDivElement>(null);
   useStaggerReveal(gridRef, ".stagger-child");
 
-  // Prevent scrolling when modal is open
+  // Prevent scrolling when modal is open and pause videos on unmount
   useEffect(() => {
     if (activeVideo) {
       document.body.style.overflow = "hidden";
@@ -37,6 +37,9 @@ export default function VideoShowcase() {
     }
     return () => {
       document.body.style.overflow = "";
+      // Pause all videos when leaving the page to stop audio immediately
+      const videos = document.querySelectorAll("video");
+      videos.forEach(v => v.pause());
     };
   }, [activeVideo]);
 
@@ -93,7 +96,10 @@ export default function VideoShowcase() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/95 z-[60] flex items-center justify-center p-4"
-            onClick={() => setActiveVideo(null)}
+            onClick={() => {
+              (document.getElementById("modal-video") as HTMLVideoElement)?.pause();
+              setActiveVideo(null);
+            }}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -104,6 +110,7 @@ export default function VideoShowcase() {
               onClick={(e) => e.stopPropagation()}
             >
               <video
+                id="modal-video"
                 src={`/videos/${activeVideo}.mp4`}
                 className="w-full h-full object-cover"
                 controls
@@ -111,7 +118,10 @@ export default function VideoShowcase() {
                 playsInline
               />
               <button
-                onClick={() => setActiveVideo(null)}
+                onClick={() => {
+                  (document.getElementById("modal-video") as HTMLVideoElement)?.pause();
+                  setActiveVideo(null);
+                }}
                 className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors z-10"
                 aria-label="Close video"
               >
