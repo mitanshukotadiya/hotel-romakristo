@@ -56,7 +56,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen w-full overflow-hidden flex items-center justify-center"
+      className="relative h-screen w-full overflow-hidden flex items-end justify-end pb-32 pr-6 md:pb-40 md:pr-16 lg:pr-24"
       id="hero"
     >
       {/* Background Image */}
@@ -75,12 +75,12 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/20" />
 
       {/* Content */}
-      <div ref={textRef} className="relative z-10 text-center px-6 max-w-4xl">
-        <p className="hero-sub accent-label text-cream/70 mb-6">
+      <div ref={textRef} className="relative z-10 text-right max-w-lg lg:max-w-xl">
+        <p className="hero-sub accent-label text-cream/70 mb-6 flex justify-end">
           ✦ Premium Hospitality in Dwarka ✦
         </p>
 
-        <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl text-cream leading-[1.1] mb-6">
+        <h1 className="font-playfair text-3xl md:text-5xl lg:text-6xl text-cream leading-[1.1] mb-6">
           {headlineWords.map((word, i) => (
             <span
               key={i}
@@ -91,11 +91,11 @@ export default function Hero() {
           ))}
         </h1>
 
-        <p className="hero-sub font-inter text-cream/70 text-lg md:text-xl tracking-wide mb-10">
+        <p className="hero-sub font-inter text-cream/70 text-base md:text-lg tracking-wide mb-8">
           Hotel Roma Kristo, Dwarka
         </p>
 
-        <div className="hero-sub">
+        <div className="hero-sub flex justify-end mt-2">
           <Button href="/rooms" variant="outline" className="border-cream/50 text-cream hover:text-charcoal">
             <span>Explore Rooms</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

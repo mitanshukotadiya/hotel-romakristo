@@ -12,7 +12,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       <motion.div key={pathname}>
         {/* Gold curtain wipe on enter */}
         <motion.div
