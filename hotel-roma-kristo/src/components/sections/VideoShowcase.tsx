@@ -28,20 +28,24 @@ export default function VideoShowcase() {
   const gridRef = useRef<HTMLDivElement>(null);
   useStaggerReveal(gridRef, ".stagger-child");
 
-  // Prevent scrolling when modal is open and pause videos on unmount
+  // Prevent scrolling when modal is open
   useEffect(() => {
     if (activeVideo) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
+  }, [activeVideo]);
+
+  // Cleanup on unmount
+  useEffect(() => {
     return () => {
       document.body.style.overflow = "";
       // Pause all videos when leaving the page to stop audio immediately
       const videos = document.querySelectorAll("video");
-      videos.forEach(v => v.pause());
+      videos.forEach((v) => v.pause());
     };
-  }, [activeVideo]);
+  }, []);
 
   return (
     <section className="section-padding bg-charcoal" id="video-showcase">
@@ -72,6 +76,9 @@ export default function VideoShowcase() {
                   muted
                   loop
                   playsInline
+                  onLoadedData={(e) => {
+                    e.currentTarget.play().catch(() => {});
+                  }}
                 />
                 
                 {/* Click overlay for play icon */}
