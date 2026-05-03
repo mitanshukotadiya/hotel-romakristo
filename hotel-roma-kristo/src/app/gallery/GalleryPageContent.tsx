@@ -13,7 +13,7 @@ export default function GalleryPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] overflow-hidden">
         <div ref={heroImageRef} className="absolute inset-0 -top-12 -bottom-12">
           <Image
             src="/images/gallery_hero_new.jpg"
@@ -24,13 +24,13 @@ export default function GalleryPageContent() {
             quality={85}
           />
         </div>
-        <div className="absolute inset-0 bg-charcoal/60" />
-        <div className="relative z-10 text-center">
-          <p className="accent-label text-cream/70 mb-4">Visual Tour</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/20" />
+        <div className="absolute bottom-12 right-6 md:bottom-16 md:right-16 z-10 text-right max-w-lg">
+          <p className="accent-label text-cream/80 mb-2 flex justify-end">Visual Tour</p>
           <AnimatedText
             text="Our Gallery"
             tag="h1"
-            className="font-playfair text-5xl md:text-7xl text-cream"
+            className="font-playfair text-4xl md:text-5xl lg:text-6xl text-cream leading-tight py-2"
           />
         </div>
       </section>

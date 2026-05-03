@@ -13,7 +13,7 @@ export default function ContactPageContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] overflow-hidden">
         <div ref={heroImageRef} className="absolute inset-0 -top-12 -bottom-12">
           <Image
             src="/images/contact_hero_new.jpg"
@@ -24,13 +24,13 @@ export default function ContactPageContent() {
             quality={85}
           />
         </div>
-        <div className="absolute inset-0 bg-charcoal/60" />
-        <div className="relative z-10 text-center">
-          <p className="accent-label text-cream/70 mb-4">Reach Out</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/20" />
+        <div className="absolute bottom-8 right-6 md:bottom-12 md:right-16 z-10 text-right max-w-lg">
+          <p className="accent-label text-cream/80 mb-2 flex justify-end">Reach Out</p>
           <AnimatedText
             text="Contact Us"
             tag="h1"
-            className="font-playfair text-5xl md:text-7xl text-cream"
+            className="font-playfair text-4xl md:text-5xl lg:text-6xl text-cream leading-tight py-2"
           />
         </div>
       </section>
