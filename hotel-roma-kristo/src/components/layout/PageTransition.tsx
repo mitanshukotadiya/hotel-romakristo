@@ -14,19 +14,12 @@ export default function PageTransition({ children }: PageTransitionProps) {
   return (
     <AnimatePresence mode="wait" initial={false}>
       <motion.div key={pathname}>
-        {/* Gold curtain wipe on enter */}
-        <motion.div
-          className="fixed inset-0 bg-gold z-50 origin-bottom"
-          initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0 }}
-          exit={{ scaleY: 1 }}
-          transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
-        />
         {/* Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.4 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
         >
           {children}
         </motion.div>
