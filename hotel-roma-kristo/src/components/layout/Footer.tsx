@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-gold mt-0.5">⏰</span>
-                <span>Check-in: 12 PM / Check-out: 11 AM</span>
+                <span>Check-in: 2:00 PM / Check-out: 10:00 AM</span>
               </li>
             </ul>
 
@@ -129,7 +129,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://maps.google.com/?q=Hotel+Roma+Kristo+Dwarka"
+                href="https://www.google.com/maps/place/Hotel+Roma+Kristo/data=!4m2!3m1!1s0x39569d00427a65f7:0x232628ef1b23534d"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/50 hover:border-gold hover:text-gold transition-all duration-300"

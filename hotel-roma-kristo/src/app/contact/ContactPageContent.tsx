@@ -16,7 +16,7 @@ export default function ContactPageContent() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div ref={heroImageRef} className="absolute inset-0 -top-12 -bottom-12">
           <Image
-            src="/images/DXWgOX1jHg8.jpg"
+            src="/images/contact_hero_new.jpg"
             alt="Contact Us"
             fill
             className="object-cover"
