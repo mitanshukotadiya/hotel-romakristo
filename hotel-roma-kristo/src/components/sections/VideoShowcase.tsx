@@ -116,6 +116,12 @@ export default function VideoShowcase() {
                 controls
                 autoPlay
                 playsInline
+                onLoadedData={(e) => {
+                  const video = e.currentTarget;
+                  video.play().catch(() => {
+                    // Ignore autoplay errors if browser strictly blocks it
+                  });
+                }}
               />
               <button
                 onClick={() => {
