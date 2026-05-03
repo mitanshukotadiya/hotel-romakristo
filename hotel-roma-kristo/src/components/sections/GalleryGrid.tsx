@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { useStaggerReveal } from "@/hooks/useScrollAnimation";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedText from "@/components/ui/AnimatedText";
 

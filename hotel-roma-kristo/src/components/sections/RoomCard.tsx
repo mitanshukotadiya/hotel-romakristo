@@ -13,7 +13,7 @@ interface RoomCardProps {
   price?: string;
 }
 
-export default function RoomCard({ name, description, amenities, image, price }: RoomCardProps) {
+export default function RoomCard({ name, description, amenities, image }: RoomCardProps) {
   const imageRef = useRef<HTMLDivElement>(null);
   useImageReveal(imageRef);
 
