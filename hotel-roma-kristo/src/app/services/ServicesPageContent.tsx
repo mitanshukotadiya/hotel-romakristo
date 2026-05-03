@@ -16,7 +16,7 @@ const services = [
     title: "High-Speed Wi-Fi",
     description:
       "Stay connected with complimentary high-speed Wi-Fi available across all floors and common areas. Stream, browse, and work without interruption.",
-    image: "/images/DTX0n38DOGB.jpg",
+    image: "/images/service_new.jpg",
   },
   {
     icon: "🚗",
@@ -30,7 +30,7 @@ const services = [
     title: "Housekeeping",
     description:
       "Our dedicated housekeeping team ensures your room is spotless and refreshed daily, maintaining the highest standards of cleanliness and hygiene.",
-    image: "/images/DTNgXNPkqHq.jpg",
+    image: "/images/service_housekeeping.jpg",
   },
   {
     icon: "🎉",
