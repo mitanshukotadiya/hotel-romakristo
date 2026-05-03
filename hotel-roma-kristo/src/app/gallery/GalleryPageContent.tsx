@@ -16,7 +16,7 @@ export default function GalleryPageContent() {
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div ref={heroImageRef} className="absolute inset-0 -top-12 -bottom-12">
           <Image
-            src="/images/DXE0hy9CEzJ.jpg"
+            src="/images/gallery_hero_new.jpg"
             alt="Gallery"
             fill
             className="object-cover"
